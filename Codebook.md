@@ -8,9 +8,10 @@
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 dd
 
-## The tidy data set that is being created by the R script contains the following columns
+## The tidy data set that is being created by the R script (step 5) contains the following columns 
 
-'data.frame':	180 obs. of  81 variables:
+### 'data.frame':	180 obs. of  81 variables:
+
  * Subject                        : int  1 2 3 4 5 6 7 8 9 10 ...
  * Description                    : Factor w/ 6 levels "LAYING","SITTING",..: 1 1 1 1 1 1 1 1 1 1 ...
  * tBodyAcc-mean()-X              : num  0.222 0.281 0.276 0.264 0.278 ...
