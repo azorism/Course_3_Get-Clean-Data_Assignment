@@ -1,8 +1,9 @@
 # Course_3_Get-Clean-Data_Assignment
 
-## Assignment of week 4
+### Assignment of week 4
+This readme file contains information about the content of this repository and the corresponding background of the assignment as based on Coursera course "Getting and Cleaning Data" (week 4, Course Project)
 
-# Instructions of the assignment
+### Instructions of the assignment
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
 
@@ -26,8 +27,8 @@ You should create one R script called run_analysis.R that does the following.
 1. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 Good luck!
 
-# The repository consists of the following files:
+### The repository consists of the following files:
 * README.md
-* run_analysis.R
+* run_analysis.R: 
 R script that delivers the five tasks as described in the assignment section
 
