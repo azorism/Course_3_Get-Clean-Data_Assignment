@@ -1,18 +1,18 @@
 
-The R script for the funtion "run_analysis" does the followin:
+## The R script for the funtion "run_analysis" does the followin:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+dd
 
-
-The tidy data set that is being created by the R script contains the following columns
+## The tidy data set that is being created by the R script contains the following columns
 
 'data.frame':	180 obs. of  81 variables:
- $ Subject                        : int  1 2 3 4 5 6 7 8 9 10 ...
- $ Description                    : Factor w/ 6 levels "LAYING","SITTING",..: 1 1 1 1 1 1 1 1 1 1 ...
+ 1. Subject                        : int  1 2 3 4 5 6 7 8 9 10 ...
+ 1. Description                    : Factor w/ 6 levels "LAYING","SITTING",..: 1 1 1 1 1 1 1 1 1 1 ...
  $ tBodyAcc-mean()-X              : num  0.222 0.281 0.276 0.264 0.278 ...
  $ tBodyAcc-mean()-Y              : num  -0.0405 -0.0182 -0.019 -0.015 -0.0183 ...
  $ tBodyAcc-mean()-Z              : num  -0.113 -0.107 -0.101 -0.111 -0.108 ...
