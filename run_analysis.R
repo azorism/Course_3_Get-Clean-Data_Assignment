@@ -4,14 +4,14 @@ run_analysis <- function(){
   library(plyr)
   
   # Read text files into R
-  x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
-  x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
-  label_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
-  label_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
-  label_desc <- read.table("./UCI HAR Dataset/activity_labels.txt")
-  features <- read.table("./UCI HAR Dataset/features.txt")
-  sub_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
-  sub_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+  x_test <- read.table("X_test.txt")
+  x_train <- read.table("X_train.txt")
+  label_test <- read.table("y_test.txt")
+  label_train <- read.table("y_train.txt")
+  label_desc <- read.table("activity_labels.txt")
+  features <- read.table("features.txt")
+  sub_test <- read.table("subject_test.txt")
+  sub_train <- read.table("subject_train.txt")
   
   # Rename columns "V1" into "Label" and V2 into Description for the activity
   label_test <- dplyr::rename(label_test, Label = V1)
@@ -53,11 +53,13 @@ run_analysis <- function(){
   
   # How many columns has the consolidates data frame
   column_count <- dim(merged_data)[[2]]
+  print(names(merged_data))
   
   # Create tidy data set <- Aggregate function to calculate the mean on columns 3-81; i.e. on the mean and std values; grouped by subject & description
-  tidy_data <- aggregate(merged_data[, 3:column_count], list(res$Subject,res$description), mean)
+  tidy_data <- aggregate(merged_data[, 3:column_count], list(merged_data$Subject,merged_data$description), mean)
+  tidy_data <- dplyr::rename(tidy_data, Subject = Group.1, Description = Group.2)
   write.table(tidy_data, file="Assignment_4_tidy_data.txt", append=FALSE)  
 
+  # return tidy_date set
   tidy_data
-  #merged_data
 }
