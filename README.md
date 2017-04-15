@@ -1,6 +1,6 @@
 # Course_3_Get-Clean-Data_Assignment
 
-### Assignment of week 4
+### About readme file
 This readme file contains information about the content of this repository and the corresponding background of the assignment as based on Coursera course "Getting and Cleaning Data" (week 4, Course Project)
 
 ### Instructions of the assignment
@@ -29,6 +29,5 @@ Good luck!
 
 ### The repository consists of the following files:
 * README.md
-* run_analysis.R: 
-R script that delivers the five tasks as described in the assignment section
+* run_analysis.R: R script that delivers the five tasks as described in the assignment section
 
