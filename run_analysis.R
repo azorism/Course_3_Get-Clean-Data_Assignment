@@ -57,7 +57,7 @@ run_analysis <- function(){
   # Create tidy data set <- Aggregate function to calculate the mean on columns 3-81; i.e. on the mean and std values; grouped by subject & description
   tidy_data <- aggregate(merged_data[, 3:column_count], list(merged_data$Subject,merged_data$description), mean)
   tidy_data <- dplyr::rename(tidy_data, Subject = Group.1, Description = Group.2)
-  write.table(tidy_data, file="Assignment_4_tidy_data.txt", append=FALSE)  
+  write.table(tidy_data, file="Assignment_4_tidy_data.txt", append=FALSE, row.names = FALSE)  
 
   # return tidy_date set for test purposes
   tidy_data
