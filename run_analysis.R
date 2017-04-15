@@ -13,7 +13,7 @@ run_analysis <- function(){
   sub_test <- read.table("subject_test.txt")
   sub_train <- read.table("subject_train.txt")
   
-  # Rename columns "V1" into "Label" and V2 into Description for the activity
+  # Rename columns "V1" into "Label" and "V2" into "Description" for the activity
   label_test <- dplyr::rename(label_test, Label = V1)
   label_train <- dplyr::rename(label_train, Label = V1)
   label_desc <- dplyr::rename(label_desc, Label = V1, Description = V2)
@@ -44,22 +44,21 @@ run_analysis <- function(){
   merged_data <- cbind(description, merged_data)
   
   
-  # Exercise 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for 
+  # Exercise 5: From the data set in step 4, create a second, independent tidy data set with the average of each variable for 
   # each activity and each subject.
   # Append subject into the consolidated data set
   subjects <- rbind(sub_test,sub_train)
   subjects <- dplyr::rename(subjects, Subject = V1)
   merged_data <- cbind(subjects, merged_data)
   
-  # How many columns has the consolidates data frame
+  # How many columns has the consolidated data frame
   column_count <- dim(merged_data)[[2]]
-  print(names(merged_data))
   
   # Create tidy data set <- Aggregate function to calculate the mean on columns 3-81; i.e. on the mean and std values; grouped by subject & description
   tidy_data <- aggregate(merged_data[, 3:column_count], list(merged_data$Subject,merged_data$description), mean)
   tidy_data <- dplyr::rename(tidy_data, Subject = Group.1, Description = Group.2)
   write.table(tidy_data, file="Assignment_4_tidy_data.txt", append=FALSE)  
 
-  # return tidy_date set
+  # return tidy_date set for test purposes
   tidy_data
 }
