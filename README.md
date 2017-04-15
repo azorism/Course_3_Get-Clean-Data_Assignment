@@ -30,4 +30,5 @@ Good luck!
 ### The repository consists of the following files:
 * README.md
 * run_analysis.R: R script that delivers the five tasks as described in the assignment section
-
+* Codebook.md: Codebook contains a basic description of the R script and a summary of the columns contained in the tiny data set (based on step 5 of the assignment)
+* Assignment_4_tidy_data.txt: Table containing the consolidated data set as required in step 5 of the assignment
